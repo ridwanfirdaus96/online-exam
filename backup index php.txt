@@ -1,0 +1,6 @@
+Sistem Ujian Daring (SUD) adalah platform untuk mengadakan ujian online. Melayani banyak persyaratan mengadakan ujian online. Sistem dapat menghasilkan data statistik untuk catatan. Sistem ini memungkinkan untuk mempertahankan repositori pertanyaan, dan kemudian menghasilkan makalah pada tahap selanjutnya, sehingga dosen memiliki lebih banyak fleksibilitas daripada mengadakan kuis online. Selain itu, ia menyediakan fungsi untuk menandai kertas secara otomatis.
+
+<p>Online examination System is conducting a test online to measure the knowledge of the participants on a given topic. In the olden days everybody had to gather in a classroom at the same time to take an exam. With online examination students can do the exam online, in their own time and with their own device, regardless where they life. You online need a browser and internet connection. </p>
+
+
+<p>Online Examination System (OES) is a platform to hold online examinations. It caters to many requirements of holding online examinations. The system can generate statistical data for records. The system makes it possible to maintain a repository of questions, and then generate papers at a later stage, such that the lecturer has more flexibility over holding online quizzes. Furthermore, it provides the functionality to mark the papers automatically
