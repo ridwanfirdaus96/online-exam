@@ -253,10 +253,6 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 
 </head>
 
-
-
-
-
 <body>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -286,8 +282,8 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 </nav>
 
 <div class="jumbotron text-center">
-  <h1>Ujian Daring</h1>
-  <p>Website Ujian Berbasis Daring Untuk Siswa kelas 3 SMA</p>
+  <h1>Ujian Online</h1>
+  <p>Website Ujian Berbasis Online Untuk Siswa kelas 3 SMA</p>
   <!--  form>
     <div class="input-group">
       <input type="email" class="form-control" size="50" placeholder="Email Address" required>
