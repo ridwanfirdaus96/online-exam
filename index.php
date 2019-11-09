@@ -371,7 +371,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
     </div>
     <div class="col-sm-8">
       <h2>Visi dan Misi Kami</h2><br>
-      <h4><p><strong>Visi:</strong> Visi kami yaitu menerapkan teknologi ujian daring di zaman sekarang, membantu menghasilkan yang lebih cepat dan akurat. Melalui ini akan lebih efesiensi biaya, ramah lingkungan dan sebagainya.</p></h4>
+      <h4><p><strong>Visi:</strong> Visi kami yaitu menerapkan teknologi ujian online di zaman sekarang, membantu menghasilkan yang lebih cepat dan akurat. Melalui ini akan lebih efesiensi biaya, ramah lingkungan dan sebagainya.</p></h4>
       <h4><strong>Misi:</strong> Misi kami yaitu menggunakan satu platform untuk ujian dan mengurangi dokumen fisik dan menawarkan hasil yang cepat. Guru kelas 3 SMA tidak perlu mengeluarkan uang untuk membuat kertas ujian.</h4><br>
     </div>
   </div>
@@ -609,9 +609,9 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 <div id="about" class="container-fluid">
   <div class="row">
     <div class="col-sm-8">
-      <h2>Tentang Sistem Ujian Daring</h2><br>
-      <h4>Sistem Ujian Daring akan melakukan tes online untuk mengukur pengetahuan siswa kelas 3 SMA tentang topik yang diberikan. Di masa sebelumnya semua siswa harus berkumpul di ruang kelas pada saat yang sama untuk mengikuti ujian. Dengan ujian online, siswa dapat melakukan ujian online, di waktu mereka sendiri dan dengan perangkat mereka sendiri, di mana pun mereka tinggal. Anda hanya memerlukan browser dan koneksi internet.</h4><br>
-      <p>Sistem Ujian Daring (SUD) adalah platform untuk mengadakan ujian online. Sistem ini memiliki beberapa keuntungan yaitu bisa menambah dan mempertahankan repositori pertanyaan, sehingga guru memiliki lebih banyak fleksibilitas.</p>
+      <h2>Tentang Sistem Ujian Online</h2><br>
+      <h4>Sistem Ujian Online akan melakukan tes online untuk mengukur pengetahuan siswa kelas 3 SMA tentang topik yang diberikan. Di masa sebelumnya semua siswa harus berkumpul di ruang kelas pada saat yang sama untuk mengikuti ujian. Dengan ujian online, siswa dapat melakukan ujian online, di waktu mereka sendiri dan dengan perangkat mereka sendiri, di mana pun mereka tinggal. Anda hanya memerlukan browser dan koneksi internet.</h4><br>
+      <p>Sistem Ujian Online (SUD) adalah platform untuk mengadakan ujian online. Sistem ini memiliki beberapa keuntungan yaitu bisa menambah dan mempertahankan repositori pertanyaan, sehingga guru memiliki lebih banyak fleksibilitas.</p>
 
       <br><button class="btn btn-default btn-lg">Hubungkan</button>
     </div>
