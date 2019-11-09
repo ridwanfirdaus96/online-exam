@@ -87,7 +87,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
   clear:both;
 }
   .jumbotron {
-      background-color: #f4511e;
+      background-color: #384E51;
       color: #fff;
       padding: 100px 25px;
       font-family: Montserrat, sans-serif;
@@ -99,11 +99,11 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
       background-color: #f6f6f6;
   }
   .logo-small {
-      color: #f4511e;
+      color: #384E51;
       font-size: 50px;
   }
   .logo {
-      color: #f4511e;
+      color: #384E51;
       font-size: 200px;
   }
 
@@ -119,13 +119,13 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
   }
   .carousel-control.right, .carousel-control.left {
       background-image: none;
-      color: #f4511e;
+      color: #384E51;
   }
   .carousel-indicators li {
-      border-color: #f4511e;
+      border-color: #384E51;
   }
   .carousel-indicators li.active {
-      background-color: #f4511e;
+      background-color: #384E51;
   }
   .item h4 {
       font-size: 19px;
@@ -138,7 +138,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
       font-style: normal;
   }
   .panel {
-      border: 1px solid #f4511e;
+      border: 1px solid #384E51;
       border-radius:0 !important;
       transition: box-shadow 0.5s;
   }
@@ -146,13 +146,13 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
       box-shadow: 5px 0px 40px rgba(0,0,0, .2);
   }
   .panel-footer .btn:hover {
-      border: 1px solid #f4511e;
+      border: 1px solid #384E51;
       background-color: #fff !important;
-      color: #f4511e;
+      color: #384E51;
   }
   .panel-heading {
       color: #fff !important;
-      background-color: #f4511e !important;
+      background-color: #384E51 !important;
       padding: 25px;
       border-bottom: 1px solid transparent;
       border-top-left-radius: 0px;
@@ -172,13 +172,13 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
   }
   .panel-footer .btn {
       margin: 15px 0;
-      background-color: #f4511e;
+      background-color: #384E51;
       color: #fff;
   }
   .navbar {
       margin-bottom: 0;
 
-      background-color: #f4511e;
+      background-color: #384E51;
       z-index: 9999;
       border: 0;
 
@@ -189,10 +189,10 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
       font-family: Montserrat, sans-serif;
   }
   .navbar li a, .navbar .navbar-brand {
-      color: #f4511e !important;
+      color: #384E51 !important;
   }
   .navbar-nav li a:hover, .navbar-nav li.active a {
-      color: #f4511e !important;
+      color: #78999D !important;
       background-color: #fff !important;
 
   }
@@ -203,7 +203,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
   footer .glyphicon {
       font-size: 20px;
       margin-bottom: 20px;
-      color: #f4511e;
+      color: #384E51;
   }
   .slideanim {visibility:hidden;}
   .slide {
@@ -302,7 +302,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title"><span style="color:#f4511e;font-family:Montserrat, sans-serif; font-size: 20px !important;letter-spacing: 4px; "><b>MASUK - ADMIN</b></span></h4>
+        <h4 class="modal-title"><span style="color:#384E51;font-family:Montserrat, sans-serif; font-size: 20px !important;letter-spacing: 4px; "><b>MASUK - ADMIN</b></span></h4>
       </div>
       <div class="modal-body title1">
 <div class="row">
@@ -336,7 +336,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title"><span style="color:#f4511e;font-family:Montserrat, sans-serif; font-size: 20px !important;letter-spacing: 4px; "><b>MASUK - PENGAJAR</b></span></h4>
+        <h4 class="modal-title"><span style="color:#384E51;font-family:Montserrat, sans-serif; font-size: 20px !important;letter-spacing: 4px; "><b>MASUK - PENGAJAR</b></span></h4>
       </div>
       <div class="modal-body title1">
 <div class="row">
@@ -386,7 +386,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
     <div class="modal-content title1">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title title1"><span style="color:#f4511e;font-family:Montserrat, sans-serif; font-size: 20px !important;letter-spacing: 4px; "><b>MASUK - PENGGUNA</b></span></h4>
+        <h4 class="modal-title title1"><span style="color:#384E51;font-family:Montserrat, sans-serif; font-size: 20px !important;letter-spacing: 4px; "><b>MASUK - PENGGUNA</b></span></h4>
       </div>
       <div class="modal-body">
         <form class="form-horizontal" action="login.php?q=index.php" method="POST">
@@ -430,7 +430,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
     <div class="modal-content title1">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title title1"><span  style="color:#f4511e;font-family:Montserrat, sans-serif; font-size: 20px !important;letter-spacing: 4px; "><b>DAFTAR</b></span></h4>
+        <h4 class="modal-title title1"><span  style="color:#384E51;font-family:Montserrat, sans-serif; font-size: 20px !important;letter-spacing: 4px; "><b>DAFTAR</b></span></h4>
       </div>
       <div class="modal-body">
        <form class="form-horizontal" name="form" action="sign.php?q=account.php" onSubmit="return validateForm()" method="POST">
@@ -508,7 +508,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 <div class="form-group">
   <label class="col-md-3 control-label" for=""></label>
   <div class="col-md-6">
-    <input  type="submit"  style="background: #f4511e;" class="sub" value="Daftar"  />
+    <input  type="submit"  style="background: #384E51;" class="sub" value="Daftar"  />
   </div>
 </div>
 </fieldset>
@@ -534,7 +534,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
   <div class="row slideanim">
     <div class="col-sm-4">
       <!-- span class="glyphicon glyphicon-off logo-small"></span-->
-      <i class="material-icons" style="font-size:50px;color:#f4511e">group_add</i>
+      <i class="material-icons" style="font-size:50px;color:#384E51">group_add</i>
       <h4>Ujian Online</h4>
       <p> Semua pengguna dalam satu platform</p>
     </div>
