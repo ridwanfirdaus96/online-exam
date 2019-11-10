@@ -14,7 +14,7 @@ $password = $_POST['password'];
 $q=mysqli_query($con,"INSERT INTO admin VALUES  ('$email' , '$password' , 'admin')");
 
 
-header("location:$ref?q=Succesfully registered");
+header("location:$ref?q=Pendaftaran Sukses!");
 
 
 ?>

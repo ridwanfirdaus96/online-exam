@@ -8,7 +8,7 @@ $ref=@$_GET['q'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$password=md5($password); 
+$password=md5($password);
 $result = mysqli_query($con,"SELECT name FROM user WHERE email = '$email' and password = '$password'") or die('Error');
 $count=mysqli_num_rows($result);
 if($count==1){
@@ -20,7 +20,7 @@ $_SESSION["email"] = $email;
 header("location:account.php?q=1");
 }
 else
-header("location:$ref?w=Wrong Username or Password");
+header("location:$ref?w=ID atau Password Salah");
 
 
 ?>

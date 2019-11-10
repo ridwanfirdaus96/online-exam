@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Online examiner</title>
+<title>Ujian Online</title>
 <link  rel="stylesheet" href="css/bootstrap.min.css"/>
  <link  rel="stylesheet" href="css/bootstrap-theme.min.css"/>
  <link rel="stylesheet" href="css/main.css">
@@ -28,16 +28,36 @@ $(function () {
              $(".navbar").removeClass("navbar-fixed-top");
         }
     });
-});</script>
-</head>
+});
 
+function saveAudio($fileName)
+    {
+      $conn=mysqli_connect('127.0.0.1','root','','project1');
+      if(!$conn)
+      {
+        die('server not found!');
+      }
+
+      $query="insert into audios(filename)values('{$fileName}')";
+
+      mysqli_query($conn,$query);
+
+      if(mysqli_affected_rows($conn)>0)
+      {
+        echo "<br/>audio file saved<br/>";
+      }
+
+      mysqli_close($conn);
+    }
+</script>
+</head>
 <body  style="background:#eee;">
 <div class="header">
 <div class="row">
 <div class="col-lg-6">
 </div>
 <?php
- include_once 'dbConnection.php';
+include_once 'dbConnection.php';
 session_start();
 $email=$_SESSION['email'];
   if(!(isset($_SESSION['email']))){
@@ -49,7 +69,7 @@ else
 $name = $_SESSION['name'];
 
 include_once 'dbConnection.php';
-echo '<span class="pull-right top title1" ><span class="log1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;Hello,</span> <a href="dash.php" class="log log1">'.$email.'</a>&nbsp;|&nbsp;<a href="logout.php?q=dash.php" class="log"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;Signout</button></a></span>';
+echo '<span class="pull-right top title1" ><span class="log1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;Halo,</span> <a href="dash.php" class="log log1">'.$email.'</a>&nbsp;|&nbsp;<a href="logout.php?q=dash.php" class="log"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;Signout</button></a></span>';
 }?>
 
 </div></div>
@@ -96,7 +116,7 @@ echo '<span class="pull-right top title1" ><span class="log1"><span class="glyph
 
 $result = mysqli_query($con,"SELECT * FROM quiz where email='$email' ORDER BY date DESC") or die('Error');
 echo  '<div class="panel"><table class="table table-striped title1">
-<tr><td><b>S.N.</b></td><td><b>Topic</b></td><td><b>Total question</b></td><td><b>Marks</b></td><td><b>positive</b></td><td><b>negative</b></td><td><b>Time limit</b></td><td></td></tr>';
+<tr><td><b>No.</b></td><td><b>Topik</b></td><td><b>Total Soal</b></td><td><b>Total Poin</b></td><td><b>Poin (Benar)</b></td><td><b>Poin (Salah)</b></td><td><b>Waktu Pengerjaan</b></td><td></td></tr>';
 $c=1;
 while($row = mysqli_fetch_array($result)) {
 	$title = $row['title'];
@@ -123,7 +143,6 @@ echo '</table></div>';
 }
 
 
-
 //score details
 if(@$_GET['q']== 1)
 {
@@ -131,7 +150,7 @@ if(@$_GET['q']== 1)
 //$q=mysqli_query($con,"SELECT * FROM history WHERE email='$email' ORDER BY date DESC " )or die('Error197');
 echo  '<div class="panel title">
 <table class="table table-striped title1" >
-<tr style="color:black"><td><b>S.N.</b></td><td><b>Title</b></td><td><b>Name</b></td><td><b>College</b></td><td><b>Score<b></td><td><b>Date</b></td>';
+<tr style="color:black"><td><b>No.</b></td><td><b>Gelar</b></td><td><b>Nama</b></td><td><b>Sekolah</b></td><td><b>Skor<b></td><td><b>Tanggal</b></td>';
 $c=0;
 while($row=mysqli_fetch_array($q) )
 {
@@ -161,7 +180,7 @@ if(@$_GET['q']== 2)
 $q=mysqli_query($con,"SELECT * FROM rank  ORDER BY score DESC " )or die('Error223');
 echo  '<div class="panel title">
 <table class="table table-striped title1" >
-<tr><td><b>Rank</b></td><td><b>Name</b></td><td><b>Gender</b></td><td><b>College</b></td><td><b>Score</b></td></tr>';
+<tr><td><b>Peringkat</b></td><td><b>Nama</b></td><td><b>Jenis Kelamin</b></td><td><b>Sekolah</b></td><td><b>Skor</b></td></tr>';
 $c=0;
 while($row=mysqli_fetch_array($q) )
 {
@@ -213,12 +232,13 @@ echo '<div class="panel"<a title="Back to Archive" href="update.php?q1=2"><b><sp
 <!--Feedback reading portion closed-->
 
 <!--add quiz start-->
+
 <?php
 if(@$_GET['q']==4 && !(@$_GET['step']) ) {
 echo '
 <div class="row">
-<span class="title1" style="margin-left:40%;font-size:30px;"><b>Enter Quiz Details</b></span><br /><br />
- <div class="col-md-3"></div><div class="col-md-6">   <form class="form-horizontal title1" name="form" action="update.php?q=addquiz"  method="POST">
+<span class="title1" style="margin-left:40%;font-size:30px;"><b>Masukan Soal Ujian</b></span><br /><br />
+<div class="col-md-3"></div><div class="col-md-6">   <form class="form-horizontal title1" name="form" action="update.php?q=addquiz"  method="POST">
 <fieldset>
 
 
@@ -226,7 +246,7 @@ echo '
 <div class="form-group">
   <label class="col-md-12 control-label" for="name"></label>
   <div class="col-md-12">
-  <input id="name" name="name" placeholder="Enter Quiz title" class="form-control input-md" type="text">
+  <input id="name" name="name" placeholder="Masukan nama ujian" class="form-control input-md" type="text">
 
   </div>
 </div>
@@ -237,7 +257,7 @@ echo '
 <div class="form-group">
   <label class="col-md-12 control-label" for="total"></label>
   <div class="col-md-12">
-  <input id="total" name="total" placeholder="Enter total number of questions" class="form-control input-md" type="number">
+  <input id="total" name="total" placeholder="Masukan total Soal" class="form-control input-md" type="number">
 
   </div>
 </div>
@@ -246,7 +266,7 @@ echo '
 <div class="form-group">
   <label class="col-md-12 control-label" for="right"></label>
   <div class="col-md-12">
-  <input id="right" name="right" placeholder="Enter marks on right answer" class="form-control input-md" min="0" type="number">
+  <input id="right" name="right" placeholder="Masukan poin jika benar" class="form-control input-md" min="0" type="number">
 
   </div>
 </div>
@@ -255,7 +275,7 @@ echo '
 <div class="form-group">
   <label class="col-md-12 control-label" for="wrong"></label>
   <div class="col-md-12">
-  <input id="wrong" name="wrong" placeholder="Enter minus marks on wrong answer without sign" class="form-control input-md" min="0" type="number">
+  <input id="wrong" name="wrong" placeholder="Masukan poin jika salah" class="form-control input-md" min="0" type="number">
 
   </div>
 </div>
@@ -264,7 +284,7 @@ echo '
 <div class="form-group">
   <label class="col-md-12 control-label" for="time"></label>
   <div class="col-md-12">
-  <input id="time" name="time" placeholder="Enter time limit for test in minute" class="form-control input-md" min="1" type="number">
+  <input id="time" name="time" placeholder="Masukan lama waktu pengerjaan" class="form-control input-md" min="1" type="number">
 
   </div>
 </div>
@@ -273,7 +293,7 @@ echo '
 <div class="form-group">
   <label class="col-md-12 control-label" for="tag"></label>
   <div class="col-md-12">
-  <input id="tag" name="tag" placeholder="Enter #tag which is used for searching" class="form-control input-md" type="text">
+  <input id="tag" name="tag" placeholder="Masukan #tag untuk pencarian" class="form-control input-md" type="text">
 
   </div>
 </div>
@@ -283,7 +303,7 @@ echo '
 <div class="form-group">
   <label class="col-md-12 control-label" for="desc"></label>
   <div class="col-md-12">
-  <textarea rows="8" cols="8" name="desc" class="form-control" placeholder="Write description here..."></textarea>
+  <textarea rows="8" cols="8" name="desc" class="form-control" placeholder="Tulis deksripsi tentang Soal"></textarea>
   </div>
 </div>
 
@@ -291,7 +311,7 @@ echo '
 <div class="form-group">
   <label class="col-md-12 control-label" for=""></label>
   <div class="col-md-12">
-    <input  type="submit" style="margin-left:45%" class="btn btn-primary" value="Submit" class="btn btn-primary"/>
+    <input  type="submit" style="margin-left:45%" class="btn btn-primary" value="Kirimkan" class="btn btn-primary"/>
   </div>
 </div>
 
@@ -309,25 +329,37 @@ echo '
 if(@$_GET['q']==4 && (@$_GET['step'])==2 ) {
 echo '
 <div class="row">
-<span class="title1" style="margin-left:40%;font-size:30px;"><b>Enter Question Details</b></span><br /><br />
+<span class="title1" style="margin-left:40%;font-size:30px;"><b>Masukan soal</b></span><br /><br />
  <div class="col-md-3"></div><div class="col-md-6"><form class="form-horizontal title1" name="form" action="update.php?q=addqns&n='.@$_GET['n'].'&eid='.@$_GET['eid'].'&ch=4 "  method="POST">
 <fieldset>
 ';
 
  for($i=1;$i<=@$_GET['n'];$i++)
  {
-echo '<b>Question number&nbsp;'.$i.'&nbsp;:</><br /><!-- Text input-->
+echo '<b>Soal nomor&nbsp;'.$i.'&nbsp;:</><br />
+<!-- Text input-->
 <div class="form-group">
   <label class="col-md-12 control-label" for="qns'.$i.' "></label>
   <div class="col-md-12">
-  <textarea rows="3" cols="5" name="qns'.$i.'" class="form-control" placeholder="Write question number '.$i.' here..."></textarea>
+
+  <!-- Audio input-->
+    <form action="dash.php" method="post" enctype="multipart/form-data">
+      <input type="file" name="audiofile"/>
+      <input type="button" onclick="saveAudio($fileName)" value="Upload Audio" name="save_audio"/>
+    </form>
+
+
+
+<!-- Text input-->
+  <textarea rows="3" cols="5" name="qns'.$i.'" class="form-control" placeholder="Tulis nomor Soal '.$i.' disini"></textarea>
   </div>
 </div>
+
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-12 control-label" for="'.$i.'1"></label>
   <div class="col-md-12">
-  <input id="'.$i.'1" name="'.$i.'1" placeholder="Enter option a" class="form-control input-md" type="text">
+  <input id="'.$i.'1" name="'.$i.'1" placeholder="Masukan jawaban A" class="form-control input-md" type="text">
 
   </div>
 </div>
@@ -335,7 +367,7 @@ echo '<b>Question number&nbsp;'.$i.'&nbsp;:</><br /><!-- Text input-->
 <div class="form-group">
   <label class="col-md-12 control-label" for="'.$i.'2"></label>
   <div class="col-md-12">
-  <input id="'.$i.'2" name="'.$i.'2" placeholder="Enter option b" class="form-control input-md" type="text">
+  <input id="'.$i.'2" name="'.$i.'2" placeholder="Masukan jawaban B" class="form-control input-md" type="text">
 
   </div>
 </div>
@@ -343,7 +375,7 @@ echo '<b>Question number&nbsp;'.$i.'&nbsp;:</><br /><!-- Text input-->
 <div class="form-group">
   <label class="col-md-12 control-label" for="'.$i.'3"></label>
   <div class="col-md-12">
-  <input id="'.$i.'3" name="'.$i.'3" placeholder="Enter option c" class="form-control input-md" type="text">
+  <input id="'.$i.'3" name="'.$i.'3" placeholder="Masukan jawaban C" class="form-control input-md" type="text">
 
   </div>
 </div>
@@ -351,24 +383,24 @@ echo '<b>Question number&nbsp;'.$i.'&nbsp;:</><br /><!-- Text input-->
 <div class="form-group">
   <label class="col-md-12 control-label" for="'.$i.'4"></label>
   <div class="col-md-12">
-  <input id="'.$i.'4" name="'.$i.'4" placeholder="Enter option d" class="form-control input-md" type="text">
+  <input id="'.$i.'4" name="'.$i.'4" placeholder="Masukan jawaban D" class="form-control input-md" type="text">
 
   </div>
 </div>
 <br />
-<b>Correct answer</b>:<br />
-<select id="ans'.$i.'" name="ans'.$i.'" placeholder="Choose correct answer " class="form-control input-md" >
-   <option value="a">Select answer for question '.$i.'</option>
-  <option value="a">option a</option>
-  <option value="b">option b</option>
-  <option value="c">option c</option>
-  <option value="d">option d</option> </select><br /><br />';
+<b>Jawaban yang benar</b>:<br />
+<select id="ans'.$i.'" name="ans'.$i.'" placeholder="Pilihan jawaban yang benar " class="form-control input-md" >
+   <option value="a">Pilih jawaban yang benar untuk soal '.$i.'</option>
+  <option value="a">A</option>
+  <option value="b">B</option>
+  <option value="c">C</option>
+  <option value="d">D</option> </select><br /><br />';
  }
 
 echo '<div class="form-group">
   <label class="col-md-12 control-label" for=""></label>
   <div class="col-md-12">
-    <input  type="submit" style="margin-left:45%" class="btn btn-primary" value="Submit" class="btn btn-primary"/>
+    <input  type="submit" style="margin-left:45%" class="btn btn-primary" value="Kirimkan" class="btn btn-primary"/>
   </div>
 </div>
 
@@ -385,7 +417,7 @@ echo '<div class="form-group">
 
 $result = mysqli_query($con,"SELECT * FROM quiz where email='$email' ORDER BY date DESC") or die('Error');
 echo  '<div class="panel"><table class="table table-striped title1">
-<tr><td><b>S.N.</b></td><td><b>Topic</b></td><td><b>Total question</b></td><td><b>Marks</b></td><td><b>Time limit</b></td><td></td></tr>';
+<tr><td><b>No.</b></td><td><b>Topik</b></td><td><b>Total Soal</b></td><td><b>Total Poin</b></td><td><b>Waktu Pengerjaan</b></td><td></td></tr>';
 $c=1;
 while($row = mysqli_fetch_array($result)) {
 	$title = $row['title'];

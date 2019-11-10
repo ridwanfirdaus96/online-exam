@@ -21,7 +21,7 @@ header("location:account.php?q=1");
 }
 else
 {
-header("location:index.php?q7=Email Already Registered!!!");
+header("location:index.php?q7=Alamat email sudah ada!!!");
 }
 ob_end_flush();
 ?>
