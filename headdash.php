@@ -227,7 +227,7 @@ echo '<div class="panel"<a title="Back to Archive" href="update.php?q1=2"><b><sp
 if(@$_GET['q']==4) {
 echo '
 <div class="row">
-<span class="title1" style="margin-left:40%;font-size:30px;"><b>Enter Admin Details</b></span><br /><br />
+<span class="title1" style="margin-left:40%;font-size:30px;"><b>Tambah Pengguna</b></span><br /><br />
  <div class="col-md-3"></div><div class="col-md-6">   <form class="form-horizontal title1" name="form" action="signadmin.php?q=headdash.php?q=4"  method="POST">
 <fieldset>
 
@@ -236,7 +236,7 @@ echo '
 <div class="form-group">
   <label class="col-md-12 control-label" for="name"></label>
   <div class="col-md-12">
-  <input id="email" name="email" placeholder="Enter Admin Email" class="form-control input-md" type="email">
+  <input id="email" name="email" placeholder="Masukan Email Pengguna" class="form-control input-md" type="email">
 
   </div>
 </div>
@@ -247,7 +247,7 @@ echo '
 <div class="form-group">
   <label class="col-md-12 control-label" for="total"></label>
   <div class="col-md-12">
-  <input id="password" name="password" placeholder="Enter password" class="form-control input-md" type="password">
+  <input id="password" name="password" placeholder="Masukan Password" class="form-control input-md" type="password">
 
   </div>
 </div>
@@ -289,9 +289,6 @@ echo '</table></div>';
 
 }?>
 <!--user end-->
-
-
-
 </div><!--remove admin closed-->
 </div></div>
 </body>

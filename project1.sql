@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2019 at 02:29 AM
+-- Generation Time: Nov 27, 2019 at 04:12 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.32
 
@@ -43,6 +43,7 @@ INSERT INTO `admin` (`email`, `password`, `role`) VALUES
 ('agama@gmail.com', 'agama', 'admin'),
 ('indonesia@gmail.com', 'indonesia', 'admin'),
 ('inggris@gmail.com', 'inggris', 'admin'),
+('irfan@gmail.com', 'irfan', 'admin'),
 ('matematika@gmail.com', 'matematika', 'admin'),
 ('pancasila@gmail.com', 'pancasila', 'admin'),
 ('sejarah@gmail.com', 'sejarah', 'admin');
@@ -102,6 +103,13 @@ CREATE TABLE `feedback` (
   `date` date NOT NULL,
   `time` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `name`, `email`, `subject`, `feedback`, `date`, `time`) VALUES
+('5ddde8168e38d', 'Irfan', 'irfan@gmail.com', 'Delete User', 'Please, Delete user Admin Irfan.. thanks a lot !', '2019-11-27', '08:35:58am');
 
 -- --------------------------------------------------------
 
