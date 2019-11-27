@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Online examiner</title>
+<title>Ujian Online</title>
 <link  rel="stylesheet" href="css/bootstrap.min.css"/>
  <link  rel="stylesheet" href="css/bootstrap-theme.min.css"/>
  <link rel="stylesheet" href="css/main.css">
@@ -310,10 +310,10 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 <div class="col-md-6">
 <form role="form" method="post" action="head.php?q=index.php">
 <div class="form-group">
-<input type="text" name="uname" maxlength="20"  placeholder="Admin user id" class="form-control"/>
+<input type="text" name="uname" maxlength="20"  placeholder="Masukan ID Admin" class="form-control"/>
 </div>
 <div class="form-group">
-<input type="password" name="password" maxlength="15" placeholder="Password" class="form-control"/>
+<input type="password" name="password" maxlength="15" placeholder="Masukan password" class="form-control"/>
 </div>
 <div class="form-group" align="center">
 <input type="submit" name="login" value="Login" class="btn btn-primary" />
@@ -344,10 +344,10 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 <div class="col-md-6">
 <form role="form" method="post" action="admin.php?q=index.php">
 <div class="form-group">
-<input type="text" name="uname" maxlength="20"  placeholder="Teacher user id" class="form-control"/>
+<input type="text" name="uname" maxlength="20"  placeholder="Masukan ID Pengajar" class="form-control"/>
 </div>
 <div class="form-group">
-<input type="password" name="password" maxlength="15" placeholder="Password" class="form-control"/>
+<input type="password" name="password" maxlength="15" placeholder="Masukan Password" class="form-control"/>
 </div>
 <div class="form-group" align="center">
 <input type="submit" name="login2" value="Login" class="btn btn-primary" />
@@ -361,8 +361,6 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
-
 
 <div class="container-fluid bg-grey">
   <div class="row">
@@ -397,7 +395,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 <div class="form-group">
   <label class="col-md-3 control-label" for="email"></label>
   <div class="col-md-6">
-  <input id="email" name="email" placeholder="Enter your email-id" class="form-control input-md" type="email">
+  <input id="email" name="email" placeholder="Masukan alamat email" class="form-control input-md" type="email">
 
   </div>
 </div>
@@ -405,7 +403,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 
 <!-- Password input-->
 <div class="form-group">
-  <label class="col-md-3 control-label" for="password"></label>
+  <label class="col-md-3 control-label" for="Masukan password"></label>
   <div class="col-md-6">
     <input id="password" name="password" placeholder="Enter your Password" class="form-control input-md" type="password">
 
@@ -649,16 +647,16 @@ else
 
       <div class="row">
         <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+          <input class="form-control" id="name" name="name" placeholder="Nama" type="text" required>
         </div>
         <div class="col-sm-6 form-group">
           <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
         </div>
         <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="subject" placeholder="subject" type="text" required>
+          <input class="form-control" id="email" name="subject" placeholder="Subjek" type="text" required>
         </div>
       </div>
-      <textarea class="form-control" id="comments" name="feedback" placeholder="Comment" rows="4"></textarea><br>
+      <textarea class="form-control" id="comments" name="feedback" placeholder="Komentar" rows="4"></textarea><br>
       <div class="row">
         <div class="col-sm-12 form-group">
           <button class="btn btn-default pull-right" name="submit" input type="submit">Kirim</button>

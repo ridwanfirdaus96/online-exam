@@ -10,10 +10,8 @@
  <link rel="stylesheet" href="css/main.css">
  <link  rel="stylesheet" href="css/font.css">
  <script src="js/jquery.js" type="text/javascript"></script>
-
   <script src="js/bootstrap.min.js"  type="text/javascript"></script>
  	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-
 <script>
 $(function () {
     $(document).on( 'scroll', function(){
@@ -29,26 +27,6 @@ $(function () {
         }
     });
 });
-
-function saveAudio($fileName)
-    {
-      $conn=mysqli_connect('127.0.0.1','root','','project1');
-      if(!$conn)
-      {
-        die('server not found!');
-      }
-
-      $query="insert into audios(filename)values('{$fileName}')";
-
-      mysqli_query($conn,$query);
-
-      if(mysqli_affected_rows($conn)>0)
-      {
-        echo "<br/>audio file saved<br/>";
-      }
-
-      mysqli_close($conn);
-    }
 </script>
 </head>
 <body  style="background:#eee;">
@@ -147,7 +125,7 @@ echo '</table></div>';
 if(@$_GET['q']== 1)
 {
   $q=mysqli_query($con,"SELECT distinct q.title,u.name,u.college,h.score,h.date from user u,history h,quiz q where q.email='$email' and q.eid=h.eid and h.email=u.email order by q.eid DESC")or die('Error197');
-//$q=mysqli_query($con,"SELECT * FROM history WHERE email='$email' ORDER BY date DESC " )or die('Error197');
+
 echo  '<div class="panel title">
 <table class="table table-striped title1" >
 <tr style="color:black"><td><b>No.</b></td><td><b>Gelar</b></td><td><b>Nama</b></td><td><b>Sekolah</b></td><td><b>Skor<b></td><td><b>Tanggal</b></td>';
@@ -161,18 +139,8 @@ $score=$row['score'];
 $date=$row['date'];
 echo '<tr><td>'.$c++.'</td><td>'.$title.'</td><td>'.$name.'</td><td>'.$college.'</td><td>'.$score.'</td><td>'.$date.'</td></tr>';
 }
-
-//$q23=mysqli_query($con,"SELECT title FROM quiz WHERE  eid='$eid' " )or die('Error208');
-//while($row=mysqli_fetch_array($q23) )
-//{
-//$title=$row['title'];
-//}
-//$c++;
-//echo '<tr><td>'.$c.'</td><td>'.$title.'</td><td>'.$qa.'</td><td>'.$r.'</td><td>'.$w.'</td><td>'.$s.'</td></tr>';
-//}
 echo'</table></div>';
 }
-
 
 //ranking start
 if(@$_GET['q']== 2)
@@ -197,20 +165,7 @@ $c++;
 echo '<tr><td style="color:#99cc32"><b>'.$c.'</b></td><td>'.$name.'</td><td>'.$gender.'</td><td>'.$college.'</td><td>'.$s.'</td><td>';
 }
 echo '</table></div>';}
-
 ?>
-
-
-<!--home closed-->
-<!--users start-->
-
-
-
-<!--user end-->
-
-<!--feedback start-->
-
-<!--feedback closed-->
 
 <!--feedback reading portion start-->
 <?php if(@$_GET['fid']) {
@@ -241,7 +196,6 @@ echo '
 <div class="col-md-3"></div><div class="col-md-6">   <form class="form-horizontal title1" name="form" action="update.php?q=addquiz"  method="POST">
 <fieldset>
 
-
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-12 control-label" for="name"></label>
@@ -250,8 +204,6 @@ echo '
 
   </div>
 </div>
-
-
 
 <!-- Text input-->
 <div class="form-group">
@@ -285,7 +237,6 @@ echo '
   <label class="col-md-12 control-label" for="time"></label>
   <div class="col-md-12">
   <input id="time" name="time" placeholder="Masukan lama waktu pengerjaan" class="form-control input-md" min="1" type="number">
-
   </div>
 </div>
 
@@ -294,19 +245,16 @@ echo '
   <label class="col-md-12 control-label" for="tag"></label>
   <div class="col-md-12">
   <input id="tag" name="tag" placeholder="Masukan #tag untuk pencarian" class="form-control input-md" type="text">
-
   </div>
 </div>
-
 
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-12 control-label" for="desc"></label>
   <div class="col-md-12">
-  <textarea rows="8" cols="8" name="desc" class="form-control" placeholder="Tulis deksripsi tentang Soal"></textarea>
+  <textarea rows="8" cols="8" name="desc" class="form-control" wrap="hard" placeholder="Tulis deksripsi tentang Soal"></textarea>
   </div>
 </div>
-
 
 <div class="form-group">
   <label class="col-md-12 control-label" for=""></label>
@@ -318,11 +266,65 @@ echo '
 </fieldset>
 </form></div>';
 
-
-
 }
 ?>
 <!--add quiz end-->
+
+<?php
+if(isset($_POST['save_audio']) && $_POST['save_audio']=="Upload Audio")
+{
+    $dir='uploads/';
+    $audio_path=$dir.basename($_FILES['audiofile']['name']);
+
+    if(move_uploaded_file($_FILES['audiofile']['tmp_name'],$audio_path))
+    {
+      echo 'upload successfully';
+
+      saveAudio($audio_path);
+
+      displayAudio();
+    }
+}
+
+function saveAudio($filename)
+    {
+      $conn=mysqli_connect('127.0.0.1','root','','project1');
+      if(!$conn)
+      {
+        die('server not found!');
+      }
+
+      $query="insert into audios(filename)values('{$filename}')";
+
+      mysqli_query($conn,$query);
+
+      if(mysqli_affected_rows($conn)>0)
+      {
+        echo "<br/>audio file saved<br/>";
+      }
+
+      mysqli_close($conn);
+    }
+
+function displayAudio()
+{
+    $conn=mysqli_connect('127.0.0.1','root','','project1');
+    if(!$conn)
+    {
+        die('server not found');
+    }
+
+    $query="select * from audios";
+
+    $r=mysqli_query($conn,$query);
+
+    while ($row =mysqli_fetch_array($r))
+    {
+        echo '<a href="play.php?name='.$row['filename'].'">'.$row['filename'].'</a>';
+        echo "<br />";
+    }
+}
+?>
 
 <!--add quiz step2 start-->
 <?php
@@ -336,20 +338,12 @@ echo '
 
  for($i=1;$i<=@$_GET['n'];$i++)
  {
+
 echo '<b>Soal nomor&nbsp;'.$i.'&nbsp;:</><br />
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-12 control-label" for="qns'.$i.' "></label>
   <div class="col-md-12">
-
-  <!-- Audio input-->
-    <form action="dash.php" method="post" enctype="multipart/form-data">
-      <input type="file" name="audiofile"/>
-      <input type="button" onclick="saveAudio($fileName)" value="Upload Audio" name="save_audio"/>
-    </form>
-
-
-
 <!-- Text input-->
   <textarea rows="3" cols="5" name="qns'.$i.'" class="form-control" placeholder="Tulis nomor Soal '.$i.' disini"></textarea>
   </div>
@@ -376,7 +370,6 @@ echo '<b>Soal nomor&nbsp;'.$i.'&nbsp;:</><br />
   <label class="col-md-12 control-label" for="'.$i.'3"></label>
   <div class="col-md-12">
   <input id="'.$i.'3" name="'.$i.'3" placeholder="Masukan jawaban C" class="form-control input-md" type="text">
-
   </div>
 </div>
 <!-- Text input-->
