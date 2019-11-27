@@ -17,9 +17,9 @@
 {echo'<script>alert("'.@$_GET['w'].'");</script>';}
 ?>
 <script>
-function validateForm() {var y = document.forms["form"]["name"].value;  var letters = /^[A-Za-z]+$/;if (y == null || y == "") {alert("Name must be filled out.");return false;}var z =document.forms["form"]["college"].value;if (z == null || z == "") {alert("college must be filled out.");return false;}var x = document.forms["form"]["email"].value;var atpos = x.indexOf("@");
-var dotpos = x.lastIndexOf(".");if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {alert("Not a valid e-mail address.");return false;}var a = document.forms["form"]["password"].value;if(a == null || a == ""){alert("Password must be filled out");return false;}if(a.length<5 || a.length>25){alert("Passwords must be 5 to 25 characters long.");return false;}
-var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords must match.");return false;}}
+function validateForm() {var y = document.forms["form"]["name"].value;  var letters = /^[A-Za-z]+$/;if (y == null || y == "") {alert("Nama harus di isi");return false;}var z =document.forms["form"]["college"].value;if (z == null || z == "") {alert("Sekolah harus di isi");return false;}var x = document.forms["form"]["email"].value;var atpos = x.indexOf("@");
+var dotpos = x.lastIndexOf(".");if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {alert("Email tidak valid");return false;}var a = document.forms["form"]["password"].value;if(a == null || a == ""){alert("Password harus di isi");return false;}if(a.length<5 || a.length>25){alert("Passwords di isi minimal 5 karakter");return false;}
+var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords tidak cocok");return false;}}
 </script>
 
 
@@ -48,13 +48,12 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
   }
 }
 
+
 .modal-dialog {
   display: inline-block;
   text-align: left;
   vertical-align: middle;
 }
-
-
 
   {
       font: 400 15px Lato, sans-serif;
@@ -86,12 +85,17 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 .clear{
   clear:both;
 }
-  .jumbotron {
-      background-color: #384E51;
+  
+.jumbotron {
+      background-color: #199fd3;
+      background-image: url("assets/images/bg.png");
+      background-size: auto;
+      margin-top: 50px;
       color: #fff;
       padding: 100px 25px;
-      font-family: Montserrat, sans-serif;
+      font-family: Ubuntu, sans-serif;
   }
+
   .container-fluid {
       padding: 60px 50px;
   }
@@ -99,11 +103,11 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
       background-color: #f6f6f6;
   }
   .logo-small {
-      color: #384E51;
+      color: #199fd3;
       font-size: 50px;
   }
   .logo {
-      color: #384E51;
+      color: #199fd3;
       font-size: 200px;
   }
 
@@ -119,13 +123,13 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
   }
   .carousel-control.right, .carousel-control.left {
       background-image: none;
-      color: #384E51;
+      color: #199fd3;
   }
   .carousel-indicators li {
-      border-color: #384E51;
+      border-color: #199fd3;
   }
   .carousel-indicators li.active {
-      background-color: #384E51;
+      background-color: #199fd3;
   }
   .item h4 {
       font-size: 19px;
@@ -138,21 +142,22 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
       font-style: normal;
   }
   .panel {
-      border: 1px solid #384E51;
+      border: 1px solid #199fd3;
       border-radius:0 !important;
       transition: box-shadow 0.5s;
   }
+
   .panel:hover {
       box-shadow: 5px 0px 40px rgba(0,0,0, .2);
   }
   .panel-footer .btn:hover {
-      border: 1px solid #384E51;
+      border: 1px solid #199fd3;
       background-color: #fff !important;
-      color: #384E51;
+      color: #199fd3;
   }
   .panel-heading {
       color: #fff !important;
-      background-color: #384E51 !important;
+      background-color: #199fd3 !important;
       padding: 25px;
       border-bottom: 1px solid transparent;
       border-top-left-radius: 0px;
@@ -172,13 +177,13 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
   }
   .panel-footer .btn {
       margin: 15px 0;
-      background-color: #384E51;
+      background-color: #199fd3;
       color: #fff;
   }
   .navbar {
       margin-bottom: 0;
 
-      background-color: #384E51;
+      background-color: #199fd3;
       z-index: 9999;
       border: 0;
 
@@ -189,7 +194,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
       font-family: Montserrat, sans-serif;
   }
   .navbar li a, .navbar .navbar-brand {
-      color: #384E51 !important;
+      color: #199fd3 !important;
   }
   .navbar-nav li a:hover, .navbar-nav li.active a {
       color: #78999D !important;
@@ -203,7 +208,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
   footer .glyphicon {
       font-size: 20px;
       margin-bottom: 20px;
-      color: #384E51;
+      color: #199fd3;
   }
   .slideanim {visibility:hidden;}
   .slide {
@@ -248,6 +253,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
         font-size: 150px;
     }
   }
+  
   </style>
 
 
@@ -281,7 +287,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
   </div>
 </nav>
 
-<div class="jumbotron text-center">
+<div class="jumbotron text-left">
   <h1>Ujian Online</h1>
   <p>Website Ujian Berbasis Online Untuk Siswa kelas 3 SMA</p>
   <!--  form>
@@ -295,14 +301,13 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 </div>
 
 
-
 <!-- Container (Admin Section) -->
 <div class="modal fade" id="login">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title"><span style="color:#384E51;font-family:Montserrat, sans-serif; font-size: 20px !important;letter-spacing: 4px; "><b>MASUK - ADMIN</b></span></h4>
+        <h4 class="modal-title"><span style="color:#199fd3;font-family:Montserrat, sans-serif; font-size: 20px !important;letter-spacing: 0px; "><b>MASUK - ADMIN</b></span></h4>
       </div>
       <div class="modal-body title1">
 <div class="row">
@@ -336,7 +341,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title"><span style="color:#384E51;font-family:Montserrat, sans-serif; font-size: 20px !important;letter-spacing: 4px; "><b>MASUK - PENGAJAR</b></span></h4>
+        <h4 class="modal-title"><span style="color:#199fd3;font-family:Montserrat, sans-serif; font-size: 20px !important;letter-spacing: 4px; "><b>MASUK - PENGAJAR</b></span></h4>
       </div>
       <div class="modal-body title1">
 <div class="row">
@@ -350,9 +355,16 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 <input type="password" name="password" maxlength="15" placeholder="Masukan Password" class="form-control"/>
 </div>
 <div class="form-group" align="center">
-<input type="submit" name="login2" value="Login" class="btn btn-primary" />
 </div>
-</form>
+<div class="modal-footer" align="center">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+        <button type="submit" class="btn btn-primary" name="login2" value="Login">Masuk</button>
+    </fieldset>
+    </form>
+</div>
+</div>
+
+</div>
 </div><div class="col-md-3"></div></div>
       </div>
       <!--<div class="modal-footer">
@@ -384,7 +396,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
     <div class="modal-content title1">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title title1"><span style="color:#384E51;font-family:Montserrat, sans-serif; font-size: 20px !important;letter-spacing: 4px; "><b>MASUK - PENGGUNA</b></span></h4>
+        <h4 class="modal-title title1"><span style="color:#199fd3;font-family:Montserrat, sans-serif; font-size: 20px !important;letter-spacing: 4px; "><b>MASUK - PENGGUNA</b></span></h4>
       </div>
       <div class="modal-body">
         <form class="form-horizontal" action="login.php?q=index.php" method="POST">
@@ -403,17 +415,17 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 
 <!-- Password input-->
 <div class="form-group">
-  <label class="col-md-3 control-label" for="Masukan password"></label>
+  <label class="col-md-3 control-label" for="password"></label>
   <div class="col-md-6">
-    <input id="password" name="password" placeholder="Enter your Password" class="form-control input-md" type="password">
+    <input id="password" name="password" placeholder="Masukan Password" class="form-control input-md" type="password">
 
   </div>
 </div>
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Log in</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+        <button type="submit" class="btn btn-primary">Masuk</button>
     </fieldset>
 </form>
       </div>
@@ -428,7 +440,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
     <div class="modal-content title1">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title title1"><span  style="color:#384E51;font-family:Montserrat, sans-serif; font-size: 20px !important;letter-spacing: 4px; "><b>DAFTAR</b></span></h4>
+        <h4 class="modal-title title1"><span  style="color:#199fd3;font-family:Montserrat, sans-serif; font-size: 20px !important;letter-spacing: 4px; "><b>DAFTAR PENGGUNA</b></span></h4>
       </div>
       <div class="modal-body">
        <form class="form-horizontal" name="form" action="sign.php?q=account.php" onSubmit="return validateForm()" method="POST">
@@ -450,7 +462,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
   <div class="col-md-6">
     <select id="gender" name="gender" placeholder="Pilih Jenis Kelamin" class="form-control input-md" >
    <option value="Male">Pilih Jenis Kelamin</option>
-  <option value="M">laki-Laki</option>
+  <option value="M">Laki-Laki</option>
   <option value="F">Perempuan</option> </select>
   </div>
 </div>
@@ -506,7 +518,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 <div class="form-group">
   <label class="col-md-3 control-label" for=""></label>
   <div class="col-md-6">
-    <input  type="submit"  style="background: #384E51;" class="sub" value="Daftar"  />
+    <input  type="submit"  class="sub" style="background: #199fd3;" value="Daftar"  />
   </div>
 </div>
 </fieldset>
@@ -519,11 +531,6 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 
 
 
-
-
-
-
-
 <!-- Container (Services Section) -->
 <div id="services" class="container-fluid text-center">
   <h2>Layanan</h2>
@@ -532,7 +539,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
   <div class="row slideanim">
     <div class="col-sm-4">
       <!-- span class="glyphicon glyphicon-off logo-small"></span-->
-      <i class="material-icons" style="font-size:50px;color:#384E51">group_add</i>
+      <i class="material-icons" style="font-size:50px;color:#199fd3">group_add</i>
       <h4>Ujian Online</h4>
       <p> Semua pengguna dalam satu platform</p>
     </div>
@@ -608,7 +615,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
   <div class="row">
     <div class="col-sm-8">
       <h2>Tentang Sistem Ujian Online</h2><br>
-      <h4>Sistem Ujian Online akan melakukan tes online untuk mengukur pengetahuan siswa kelas 3 SMA tentang topik yang diberikan. Di masa sebelumnya semua siswa harus berkumpul di ruang kelas pada saat yang sama untuk mengikuti ujian. Dengan ujian online, siswa dapat melakukan ujian online, di waktu mereka sendiri dan dengan perangkat mereka sendiri, di mana pun mereka tinggal. Anda hanya memerlukan browser dan koneksi internet.</h4><br>
+      <h4>Sistem Ujian Online akan melakukan tes online untuk mengukur pengetahuan siswa kelas 3 SMA tentang ujian yang diberikan. Di masa sebelumnya semua siswa harus berkumpul di ruang kelas pada saat yang sama untuk mengikuti ujian. Dengan ujian online, siswa dapat melakukan ujian online, di waktu mereka sendiri dan dengan perangkat mereka sendiri, di mana pun mereka tinggal. Anda hanya memerlukan browser dan koneksi internet.</h4><br>
       <p>Sistem Ujian Online (SUD) adalah platform untuk mengadakan ujian online. Sistem ini memiliki beberapa keuntungan yaitu bisa menambah dan mempertahankan repositori pertanyaan, sehingga guru memiliki lebih banyak fleksibilitas.</p>
 
       <br><button class="btn btn-default btn-lg">Hubungkan</button>

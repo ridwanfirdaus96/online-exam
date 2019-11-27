@@ -30,6 +30,46 @@ $(function () {
         }
     });
 });</script>
+
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 200px;
+  font-family: sans-serif;
+  font-size: 12px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+</style>
 </head>
 
 <body  style="background:#eee;">
@@ -77,11 +117,11 @@ echo '<span class="pull-right top title1" ><span class="log1"><span class="glyph
 		<li <?php if(@$_GET['q']==2) echo'class="active"'; ?>><a href="headdash.php?q=2">Peringkat</a></li>
 		<li <?php if(@$_GET['q']==3) echo'class="active"'; ?>><a href="headdash.php?q=3">Feedback</a></li>
         <li class="dropdown <?php if(@$_GET['q']==4 || @$_GET['q']==5) echo'active'; ?>">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="headdash.php?q=4">Tambah Pengguna</a></li>
-            <li><a href="headdash.php?q=5">Hapus Pengguna</a></li>
-          </ul>
+          <a href="#Tambah_Hapus" class="dropdown-toggle" data-toggle="#opsi" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
+          <div class="dropdown-content">
+            <a href="headdash.php?q=4">Tambah Pengguna</a>
+            <a href="headdash.php?q=5">Hapus Pengguna</a>
+          </div>
         </li>
       </ul>
           </div><!-- /.navbar-collapse -->
@@ -97,7 +137,7 @@ echo '<span class="pull-right top title1" ><span class="log1"><span class="glyph
 
 $result = mysqli_query($con,"SELECT * FROM quiz ORDER BY date DESC") or die('Error');
 echo  '<div class="panel"><table class="table table-striped title1">
-<tr><td><b>No.</b></td><td><b>Topik</b></td><td><b>Total Soal</b></td><td><b>Total Poin</b></td><td><b>Poin (Benar)</b></td><td><b>Poin (Salah)</b></td><td><b>Waktu Pengerjaan</b></td><td></td></tr>';
+<tr><td><b>No.</b></td><td><b>Nama Ujian</b></td><td><b>Total Soal</b></td><td><b>Total Poin</b></td><td><b>Poin (Benar)</b></td><td><b>Poin (Salah)</b></td><td><b>Waktu Pengerjaan</b></td><td></td></tr>';
 $c=1;
 while($row = mysqli_fetch_array($result)) {
 	$title = $row['title'];
@@ -143,7 +183,7 @@ $gender=$row['gender'];
 $college=$row['college'];
 }
 $c++;
-echo '<tr><td style="color:#99cc32"><b>'.$c.'</b></td><td>'.$name.'</td><td>'.$gender.'</td><td>'.$college.'</td><td>'.$s.'</td><td>';
+echo '<tr><td style="color:#black"><b>'.$c.'</b></td><td>'.$name.'</td><td>'.$gender.'</td><td>'.$college.'</td><td>'.$s.'</td><td>';
 }
 echo '</table></div>';}
 

@@ -42,7 +42,7 @@ font-family:'typo';
 
 .header
 {
-background:#384E51;
+background:#199fd3;
 height:70px;
 }
 .logo
@@ -144,8 +144,8 @@ font-size:15px;
 }
 .log:hover
 {
-color:#9acd32;
+color:#000000;
 border-top:2px solid;
-border-color:#384E51;
+border-color:#199fd3;
 text-decoration:none;
 }

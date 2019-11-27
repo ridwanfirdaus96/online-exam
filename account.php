@@ -26,7 +26,7 @@ include_once 'dbConnection.php';
 ?>
 <body>
 <div class="header">
-<div class="row" style="background-color:#384E51;">
+<div class="row" style="background-color:#199fd3;">
 <div class="col-lg-6" >
 <span class="logo"></span></div>
 <div class="col-md-4 col-md-offset-2">
@@ -89,7 +89,7 @@ echo '<span class="pull-right top title1" ><span class="log1"><span class="glyph
 
 $result = mysqli_query($con,"SELECT * FROM quiz ORDER BY date DESC") or die('Error');
 echo  '<div class="panel"><table class="table table-striped title1">
-<tr style="color:black"><td><b>No.</b></td><td><b>Topik</b></td><td><b>Total soal</b></td><td><b>Total Poin</b></td><td><b>Poin (Benar)</b></td><td><b>Poin (Salah)</b></td><td><b>Waktu Pengerjaan</b></td><td></td><td></td></tr>';
+<tr style="color:black"><td><b>No.</b></td><td><b>Nama Ujian</b></td><td><b>Total soal</b></td><td><b>Total Poin</b></td><td><b>Poin (Benar)</b></td><td><b>Poin (Salah)</b></td><td><b>Waktu Pengerjaan</b></td><td></td><td></td></tr>';
 $c=1;
 while($row = mysqli_fetch_array($result)) {
   $title = $row['title'];

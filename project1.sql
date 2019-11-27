@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2019 at 04:12 AM
+-- Generation Time: Nov 27, 2019 at 08:29 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.32
 
@@ -143,7 +143,9 @@ INSERT INTO `history` (`email`, `eid`, `score`, `level`, `sahi`, `wrong`, `date`
 ('andhini@gmail.com', '5ddd694bca4d7', 4, 2, 2, 0, '2019-11-27 01:24:09'),
 ('andhini@gmail.com', '5ddd6320142aa', 4, 2, 2, 0, '2019-11-27 01:24:17'),
 ('anisa@gmail.com', '5ddd6320142aa', -2, 2, 0, 2, '2019-11-27 01:25:26'),
-('anisa@gmail.com', '5ddd5e51a7a39', 1, 2, 1, 1, '2019-11-27 01:25:34');
+('anisa@gmail.com', '5ddd5e51a7a39', 1, 2, 1, 1, '2019-11-27 01:25:34'),
+('asep@gmail.com', '5ddd694bca4d7', 1, 2, 1, 1, '2019-11-27 07:13:55'),
+('asep@gmail.com', '5ddd642381974', 4, 2, 2, 0, '2019-11-27 07:26:28');
 
 -- --------------------------------------------------------
 
@@ -293,7 +295,7 @@ CREATE TABLE `rank` (
 INSERT INTO `rank` (`email`, `score`, `time`) VALUES
 ('fauziah@gmail.com', 1, '2019-11-27 01:19:00'),
 ('ridwan@gmail.com', 4, '2019-11-27 01:19:43'),
-('asep@gmail.com', 4, '2019-11-27 01:20:48'),
+('asep@gmail.com', 9, '2019-11-27 07:26:28'),
 ('ragil@gmail.com', -2, '2019-11-27 01:21:12'),
 ('ahmad@gmail.com', 1, '2019-11-27 01:22:20'),
 ('monica@gmail.com', 4, '2019-11-27 01:22:45'),
@@ -326,6 +328,7 @@ INSERT INTO `user` (`name`, `gender`, `college`, `email`, `mob`, `password`) VAL
 ('Andhini', 'F', 'SMA 4 Bandung', 'andhini@gmail.com', 87262525278, '1369615388917d5c0138c81dbd33fe0b'),
 ('Anisa', 'F', 'SMA 13 Bandung', 'anisa@gmail.com', 82372362992, '40cc8f68f52757aff1ad39a006bfbf11'),
 ('Asep', 'M', 'SMA N 1 Bandung', 'asep@gmail.com', 88132328811, '7b4449987d9a0e390f88e8fa37a12b83'),
+('Erwin', 'M', 'SMA 17 Bandung', 'erwin@gmail.com', 89732621231, '785f0b13d4daf8eee0d11195f58302a4'),
 ('Fauziah', 'F', 'SMA 24 Bandung', 'fauziah@gmail.com', 83658736883, 'a8e404443f4edea9337a04fa3bf192b1'),
 ('Monica', 'F', 'SMA 7 Bandung', 'monica@gmail.com', 89237813222, 'ff0d813dd5d2f64dd372c6c4b6aed086'),
 ('Ragil', 'M', 'SMA 7 Bandung', 'ragil@gmail.com', 86352769993, '67153c4ffb77b9d03276cad142a84e79'),
